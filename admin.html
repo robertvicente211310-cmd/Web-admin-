@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Drake Exe</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loginScreen" class="login-container">
+  <div class="login-box">
+    <div class="login-logo">DRAKE <span>EXE</span></div>
+    <p>Painel de Administração</p>
+    <input type="password" id="adminKey" placeholder="Digite a chave de admin">
+    <button onclick="fazerLogin()">ACEDER</button>
+    <small>Chave padrão: DRAKEADMIN</small>
+  </div>
+</div>
+
+<div id="painel" class="admin-container" style="display:none;">
+  <header class="admin-header">
+    <div class="logo">DRAKE <span>EXE</span> · ADMIN</div>
+    <nav>
+      <a href="index.html" target="_blank">Ver site</a>
+      <button onclick="sair()">Sair</button>
+    </nav>
+  </header>
+
+  <div class="admin-body">
+
+    <section class="box">
+      <h2>Publicar novo script</h2>
+      <form id="formScript" class="form-script">
+        <input type="text" id="f-nome" placeholder="Nome do script" required>
+        <input type="text" id="f-credit" placeholder="Créditos / autor" required>
+        <input type="text" id="f-game" placeholder="Jogo (ex: Steal An Egg)" required>
+        <input type="text" id="f-image-url" placeholder="URL da imagem (opcional)">
+        <input type="file" id="f-image" accept="image/*">
+        <textarea id="f-code" placeholder="Cole o código Lua aqui" required></textarea>
+        <button type="submit">PUBLICAR SCRIPT</button>
+        <button type="button" onclick="limparForm()" class="btn-sec">Limpar</button>
+      </form>
+    </section>
+
+    <section class="box">
+      <h2>Scripts publicados</h2>
+      <input type="text" id="f-busca" placeholder="Buscar..." class="search-admin">
+      <div id="listaScripts" class="lista-scripts"></div>
+    </section>
+
+  </div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
